@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * DATA PORTOFOLIO - DATA.JS
- * Berisi seluruh data informasi diri, keahlian, layanan, portofolio, dan kontak.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.data = {

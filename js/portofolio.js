@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * PORTOFOLIO & KARYA - PORTOFOLIO.JS
- * Merender galeri hasil karya/prestasi, filter tab, dan modal pop-up lightbox.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderPortofolio = function () {
@@ -74,7 +67,6 @@ PortfolioApp.renderPortofolio = function () {
 };
 
 PortfolioApp.initPortofolio = function () {
-  // Filter Tab Kategori Portofolio
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projCards = document.querySelectorAll('.portfolio-card');
 
@@ -103,7 +95,6 @@ PortfolioApp.initPortofolio = function () {
     });
   });
 
-  // Lightbox Modal Interaksi
   const modal = document.getElementById('portfolioModal');
   const modalImg = document.getElementById('modalImg');
   const modalTitle = document.getElementById('modalTitle');

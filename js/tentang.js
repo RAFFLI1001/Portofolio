@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * TENTANG SAYA & STATISTIK - TENTANG.JS
- * Berisi seluruh tampilan dan logika bagian Biografi, Profil Pribadi, dan Statistik.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderTentang = function () {
@@ -114,7 +107,6 @@ PortfolioApp.renderTentang = function () {
 };
 
 PortfolioApp.initTentang = function () {
-  // Animasi angka counter saat section counter terlihat (Intersection Observer)
   const counterNumbers = document.querySelectorAll('.counter-number');
   let countersDone = false;
 

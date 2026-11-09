@@ -1,4 +1,3 @@
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderHero = function () {
@@ -64,7 +63,6 @@ PortfolioApp.renderHero = function () {
 PortfolioApp.initHero = function () {
   const profile = PortfolioApp.data.profile;
 
-  // Typewriter Animation
   const typewriterElement = document.getElementById('typewriterText');
   const words = profile.roles;
   let wordIdx = 0;
@@ -99,7 +97,6 @@ PortfolioApp.initHero = function () {
   }
   tickTypewriter();
 
-  // 3D Card Tilt on Profile Avatar
   const profileTilt = document.getElementById('profileTilt');
   if (profileTilt) {
     profileTilt.addEventListener('mousemove', (e) => {

@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * LAYANAN - LAYANAN.JS
- * Merender daftar layanan spesialisasi dan mengatur efek interaktif hover & tilt.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderLayanan = function () {
@@ -42,7 +35,6 @@ PortfolioApp.renderLayanan = function () {
 };
 
 PortfolioApp.initLayanan = function () {
-  // 3D Card Tilt untuk seluruh kartu layanan
   const serviceCards = document.querySelectorAll('.service-card.tilt-card');
   serviceCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {

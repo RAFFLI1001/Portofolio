@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * KONTAK & FORMULIR - KONTAK.JS
- * Merender panel kontak, formulir pesan, validasi input, toast, dan salin email.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderKontak = function () {
@@ -123,7 +116,6 @@ PortfolioApp.showToast = function (msg, icon = 'fas fa-check-circle') {
 PortfolioApp.initKontak = function () {
   const profile = PortfolioApp.data.profile;
 
-  // Tombol Salin Email
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
@@ -143,7 +135,6 @@ PortfolioApp.initKontak = function () {
     });
   }
 
-  // Validasi & Pengiriman Formulir
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
 

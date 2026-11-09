@@ -1,14 +1,6 @@
-/**
- * ============================================================================
- * KEAHLIAN & SKILL - KEAHLIAN.JS
- * Merender daftar keahlian teknologi web dan animasi progress bar.
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.renderKeahlian = function () {
-  // Hanya mengambil keahlian teknologi web (kategori gaming/esport dihapus)
   const skills = PortfolioApp.data.skills.filter((cat) => cat.category !== 'gaming');
 
   return `
@@ -56,7 +48,6 @@ PortfolioApp.renderKeahlian = function () {
 };
 
 PortfolioApp.initKeahlian = function () {
-  // Animasi pengisian bar keahlian secara bertahap saat section terlihat
   const skillBars = document.querySelectorAll('.skill-progress');
   let skillsDone = false;
 

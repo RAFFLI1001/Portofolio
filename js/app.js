@@ -1,14 +1,5 @@
-/**
- * ============================================================================
- * MAIN APPLICATION CONTROLLER - APP.JS
- * Koordinator utama: merender Navbar & Footer, menggabungkan seluruh komponen,
- * dan mengaktifkan seluruh logika interaksi (Sticky nav, Theme switcher, Scrollspy).
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
-// Render Navbar & Header
 PortfolioApp.renderNavbar = function () {
   const profile = PortfolioApp.data.profile;
 
@@ -52,7 +43,6 @@ PortfolioApp.renderNavbar = function () {
   `;
 };
 
-// Render Footer & Scroll-To-Top Button
 PortfolioApp.renderFooter = function () {
   const profile = PortfolioApp.data.profile;
 
@@ -101,7 +91,6 @@ PortfolioApp.renderFooter = function () {
   `;
 };
 
-// Inisialisasi Navigasi, Scrollspy, Tema, dan Progress Ring
 PortfolioApp.initNavigation = function () {
   const header = document.getElementById('header');
   const sections = document.querySelectorAll('section[id]');
@@ -109,7 +98,7 @@ PortfolioApp.initNavigation = function () {
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   const scrollProgressCircle = document.getElementById('scrollProgressCircle');
   const radius = 20;
-  const circumference = 2 * Math.PI * radius; // ~125.66
+  const circumference = 2 * Math.PI * radius;
 
   if (scrollProgressCircle) {
     scrollProgressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
@@ -126,7 +115,6 @@ PortfolioApp.initNavigation = function () {
       }
     }
 
-    // Scrollspy Nav Link Aktif
     sections.forEach((sec) => {
       const top = sec.offsetTop - 150;
       const height = sec.offsetHeight;
@@ -142,7 +130,6 @@ PortfolioApp.initNavigation = function () {
       }
     });
 
-    // Indikator Progres Scroll SVG
     if (scrollTopBtn && scrollProgressCircle) {
       const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const percent = docHeight > 0 ? scrollY / docHeight : 0;
@@ -165,7 +152,6 @@ PortfolioApp.initNavigation = function () {
     });
   }
 
-  // Hamburger Menu Mobile
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navLinksContainer = document.getElementById('navLinks');
   const mobileOverlay = document.getElementById('mobileOverlay');
@@ -204,7 +190,6 @@ PortfolioApp.initNavigation = function () {
     });
   });
 
-  // Theme Accent Switcher (Cyan, Emerald, Purple)
   const themeBtn = document.getElementById('themeToggleBtn');
   const themes = ['', 'theme-emerald', 'theme-purple'];
   let themeIndex = 0;
@@ -235,7 +220,6 @@ PortfolioApp.initNavigation = function () {
     });
   }
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', function (e) {
       const hash = this.getAttribute('href');
@@ -249,14 +233,10 @@ PortfolioApp.initNavigation = function () {
   });
 };
 
-// ============================================================================
-// BOOTSTRAPPER UTAMA
-// ============================================================================
 PortfolioApp.init = function () {
   const app = document.getElementById('app');
   if (!app) return;
 
-  // 1. Render Seluruh Komponen Modular ke Root Container
   app.innerHTML = `
     ${PortfolioApp.renderNavbar()}
     <main>
@@ -270,12 +250,10 @@ PortfolioApp.init = function () {
     ${PortfolioApp.renderFooter()}
   `;
 
-  // 2. Inisialisasi Background Canvas
   if (typeof PortfolioApp.initCanvas === 'function') {
     PortfolioApp.initCanvas();
   }
 
-  // 3. Inisialisasi Seluruh Interaksi Modul
   PortfolioApp.initNavigation();
   if (typeof PortfolioApp.initHero === 'function') PortfolioApp.initHero();
   if (typeof PortfolioApp.initTentang === 'function') PortfolioApp.initTentang();
@@ -285,7 +263,6 @@ PortfolioApp.init = function () {
   if (typeof PortfolioApp.initKontak === 'function') PortfolioApp.initKontak();
 };
 
-// Jalankan saat DOM sudah siap
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', PortfolioApp.init);
 } else {

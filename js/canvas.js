@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * BACKGROUND CANVAS - CANVAS.JS
- * Efek partikel interaktif rasi bintang di kanvas HTML5 background (#bgCanvas).
- * ============================================================================
- */
-
 window.PortfolioApp = window.PortfolioApp || {};
 
 PortfolioApp.initCanvas = function () {
@@ -52,7 +45,6 @@ PortfolioApp.initCanvas = function () {
       if (this.x < 0 || this.x > width) this.vx = -this.vx;
       if (this.y < 0 || this.y > height) this.vy = -this.vy;
 
-      // Interaksi mouse
       if (mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
@@ -80,7 +72,6 @@ PortfolioApp.initCanvas = function () {
   function animate() {
     ctx.clearRect(0, 0, width, height);
 
-    // Hubungkan partikel yang berdekatan dengan garis neon lembut
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
       particles[i].draw();
